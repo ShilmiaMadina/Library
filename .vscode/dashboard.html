@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <!--Font Poppins-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+        rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Library BPS Bondowoso</title>
+    <link href="/css/style.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a class="flex items-center space-x-2" href="#">
+                <img src="bps bws.png" class="h-10">
+            </a>
+            <div class="hidden md:flex space-x-4">
+                <a class="text-gray-700 hover:text-blue-500" href="dashboard.html">Beranda</a>
+                <a class="text-gray-700 hover:text-blue-500" href="#">Tentang Kami</a>
+                <a class="text-gray-700 hover:text-blue-500" href="js/Daftarbuku.html">Daftar Buku</a>
+                <a class="text-gray-700 hover:text-blue-500" href="#">Kontak Kami</a>
+            </div>
+            <a href="https://bondowosokab.bps.go.id/id" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Website BPS
+                Bondowoso</a>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="flex flex-col items-center text-primary py-10 bg-blue-50">
+        <h1 class="text-3xl font-bold text-gray-800">Selamat Datang di <span class="text-blue-600">E-Library</span></h1>
+        <p class="text-gray-600 mt-4">Badan Pusat Statistik Bondowoso</p>
+        <button onclick="togglePopup()" class="mt-4 inline-block bg-blue-500 text-white px-6 py-3 rounded-lg">Buku
+            Tamu</button>
+
+            <div id="popup" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden flex justify-center items-center">
+                <div class="bg-white p-6 rounded-lg w-1/2">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-xl font-bold">Buku Tamu</h2>
+                        <button onclick="togglePopup()" class="text-red-500">&times;</button>
+                    </div>
+                    <form>
+                        <label class="block">Nama *</label>
+                        <input type="text" class="w-full border p-2 rounded mb-2" placeholder="Masukkan Nama disini ...">
+        
+                        <label class="block">Tahun Lahir *</label>
+                        <input type="date" class="w-full border p-2 rounded mb-2">
+        
+                        <label class="block">Email *</label>
+                        <input type="email" class="w-full border p-2 rounded mb-2" placeholder="Masukkan Email disini ...">
+        
+                        <label class="block">No. WhatsApp *</label>
+                        <input type="tel" class="w-full border p-2 rounded mb-2" placeholder="Masukkan No. WhatsApp disini ...">
+        
+                        <label class="block">Jenis Kelamin *</label>
+                        <div class="flex space-x-4 mb-2">
+                            <label><input type="radio" name="gender" value="Laki-laki"> Laki-laki</label>
+                            <label><input type="radio" name="gender" value="Perempuan"> Perempuan</label>
+                        </div>
+        
+                        <label class="block">Pendidikan Tertinggi *</label>
+                        <select class="w-full border p-2 rounded mb-2" placeholder="Pilih Pendidikan Ter disini ...">
+                            <option>SLTA / Sederajat</option>
+                            <option>D1 / D2 / D3</option>
+                            <option>D4 / S1</option>
+                            <option>S2</option>
+                            <option>S3</option>
+                        </select>
+        
+                        <label class="block">Pekerjaan Utama *</label>
+                        <select class="w-full border p-2 rounded mb-2">
+                            <option>Pelajar / Mahasiswa</option>
+                            <option>Peneliti / Dosen</option>
+                            <option>PNS / TNI / POLRI</option>
+                            <option>Pegawai BUMN / BUMD</option>
+                            <option>Pegawai Swasta</option>
+                            <option>Wiraswasta</option>
+                        </select>
+        
+                        <div>
+                            <form>
+                                <label class="block">Nama Instansi / Institusi *</label>
+                                <input type="text" class="w-full border p-2 rounded mb-2"
+                                    placeholder="Masukkan Nama Instansi disini ...">
+                        </div>
+        
+                        <label class="block">Kategori Instansi / Institusi *</label>
+                        <select class="w-full border p-2 rounded mb-2">
+                            <option>Lembaga Pendidikan & Penelitian Dalam Negeri</option>
+                            <option>Kementrian & Lembaga Pemerintah</option>
+                            <option>Lembaga Internasional</option>
+                            <option>Media Massa</option>
+                            <option>Pemerintah Daerah</option>
+                            <option>Perbankan</option>
+                            <option>PBUMN / BUMN</option>
+                            <option>Swasta Lainnya</option>
+                        </select>
+        
+                        <label class="block">Pemanfaatan Utama Hasil Kunjuangan*</label>
+                        <select class="w-full border p-2 rounded mb-2">
+                            <option>Tugas Sekolah/Tugas Kuliah</option>
+                            <option>Pemerintah</option>
+                            <option>Komersial</option>
+                            <option>Penelitian</option>
+                        </select>
+        
+                        <div class="flex justify-end space-x-2">
+                            <button type="button" onclick="togglePopup()"
+                                class="bg-red-500 text-white px-4 py-2 rounded">Tutup</button>
+                            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Simpan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        <img src="asset/img/bpsindonesia.png" class="h-80">
+    </section>
+
+    <!--chatbox-->
+    <div class="mx-auto flex max-w-sm items-center gap-x-2 rounded-xl bg-white p-4 shadow-lg outline 
+                outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+        <img class="size-10 shrink-0" src="asset/img/chat.png" alt="" />
+        <div>
+            <div class="text-xl font-medium text-black dark:text-white"><button>Bantuan</button></div>
+            <a href="https://wa.me/qr/24NEFWWFLDF2G1 ">
+                <p class="text-gray-200 dark:text-gray-300">You have a new message!</p>
+        </div>
+    </div>
+
+    <script>
+        function togglePopup() {
+            document.getElementById("popup").classList.toggle("hidden");
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-white shadow-md py-6 mt-10">
+        <div class="text-center text-gray-700">
+            <p class="font-bold">Badan Pusat Statistik Bondowoso</p>
+            <p class="mt-2">Website Lainnya:</p>
+            <ul class="flex justify-center space-x-4 mt-2">
+                <li><a href="https://jatim.bps.go.id/id" class="text-blue-600 hover:underline">BPS Provinsi Jawa
+                        Timur</a></li>
+                <li><a href="https://www.bps.go.id/id" class="text-blue-600 hover:underline">BPS Republik Indonesia</a>
+                </li>
+            </ul>
+            <p class="mt-4">&copy; 2025 All rights reserved | BPS Bondowoso</p>
+        </div>
+    </footer>
+</body>
+
+</html>

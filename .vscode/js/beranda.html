@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>E-Library BPS Bondowoso</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a class="flex items-center space-x-2" href="#">
+                <img src="../bps bws.png" alt="Logo BPS" class="h-10">
+            </a>
+            <div class="hidden md:flex space-x-4">
+                <a class="text-blue-600 font-semibold" href="beranda.html">Beranda</a>
+                <a class="text-gray-700 hover:text-blue-500" href="Tentangkami.html">Tentang Kami</a>
+                <a class="text-gray-700 hover:text-blue-500" href="Daftarbuku.html">Daftar Buku</a>
+                <a class="text-gray-700 hover:text-blue-500" href="Kontakkami.html">Kontak Kami</a>
+            </div>
+            <a href="https://bondowosokab.bps.go.id/id" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Website BPS Bondowoso</a>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="relative h-screen bg-[url(../Bg.jpg)] bg-no-repeat bg-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white text-center">
+            <h3 class="text-lg">Pelayanan Statistik Terpadu</h3>
+            <h1 class="text-4xl font-bold">Selamat Datang di <span class="text-blue-400">E-Library</span></h1>
+            <p class="mt-2">Badan Pusat Statistik Bondowoso</p>
+
+            <button onclick="togglePopup()" data-modal="modal" data-modal-toggle="modal" class="mt-4 bg-blue-500 text-white px-6 py-3 rounded-lg">Buku Tamu</button>
+    
+            <!-- Modal/Popup -->
+            <div id="popup" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div class="fixed inset-0 bg-gray-500/75 transition-opacity"></div>
+                <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+                    <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                        <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                            <div class="bg-white px-4 pt-5 pb-4 sm:p-9 sm:pb-4">
+                                <div class="sm:flex sm:items-start">                                   
+                                    <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                                        <h3 class="text-base font-semibold text-gray-900" id="modal-title">Buku Tamu</h3>
+                                        <form>
+                                            <label class="block">Nama *</label>
+                                            <input type="text" class="w-full border p-2 rounded mb-2" placeholder="Masukkan Nama">
+                                            
+                                            <label class="block">Tahun Lahir *</label>
+                                            <input type="date" class="w-full border p-2 rounded mb-2">
+                                            
+                                            <label class="block">Email *</label>
+                                            <input type="email" class="w-full border p-2 rounded mb-2" placeholder="Masukkan Email">
+                                            
+                                            <label class="block">No. WhatsApp *</label>
+                                            <input type="tel" class="w-full border p-2 rounded mb-2" placeholder="Masukkan No. WhatsApp">
+                                            
+                                            <label class="block">Jenis Kelamin *</label>
+                                            <div class="flex space-x-4 mb-2">
+                                                <label><input type="radio" name="gender" value="Laki-laki"> Laki-laki</label>
+                                                <label><input type="radio" name="gender" value="Perempuan"> Perempuan</label>
+                                            </div>
+                                            
+                                            <label class="block">Pendidikan Tertinggi *</label>
+                                            <select class="w-full border p-2 rounded mb-2">
+                                                <option>Pilih Pendidikan</option>
+                                            </select>
+                                            
+                                            <div class="flex justify-end space-x-2">
+                                                <button type="button" onclick="togglePopup()" class="bg-red-500 text-white px-4 py-2 rounded">Tutup</button>
+                                                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Simpan</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                                <button type="button" class="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-red-500 sm:ml-3 sm:w-auto">Simpan</button>
+                                <button type="button" onclick="toggleClose()" class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 shadow-xs ring-gray-300 ring-inset hover:bg-gray-50 sm:mt-0 sm:w-auto">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Box -->    
+
+    <!-- kalo mau modif di sini, ubah bottom sama rightnya buat atur margin -->
+    <div class="fixed bottom-12 right-12 z-50">
+        <div class="flex max-w-sm items-center gap-x-2 rounded-xl bg-white p-4 shadow-lg outline outline-black/5 dark:bg-slate-100 dark:shadow-2xl dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-10 shrink-0" src="../chat.png" alt="Chat icon" />
+            <div>
+                <a href="https://wa.me/qr/24NEFWWFLDF2G1">
+                    <p class="text-xl font-medium text-gray-800 dark:text-gray-800">Bantuan</p>
+                </a>
+            </div>
+        </div>
+    </div>    
+
+    <!-- Footer -->
+    <footer class="bg-white shadow-md py-6 mt-10">
+        <div class="text-center text-gray-700">
+            <p class="font-bold">Badan Pusat Statistik Bondowoso</p>
+            <p class="mt-2">Website Lainnya:</p>
+            <ul class="flex justify-center space-x-4 mt-2">
+                <li><a href="#" class="text-blue-600 hover:underline">BPS Provinsi Jawa Timur</a></li>
+                <li><a href="#" class="text-blue-600 hover:underline">BPS Republik Indonesia</a></li>
+            </ul>
+            <p class="mt-4">&copy; 2025 All rights reserved | BPS Bondowoso</p>
+        </div>
+    </footer>
+
+    <script>
+        function togglePopup() {
+            document.getElementById("popup").classList.toggle("hidden");
+        }
+        function toggleClose() {
+            document.getElementById("popup").classList.add("hidden");
+        }
+    </script>
+</body>
+</html>
